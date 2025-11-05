@@ -1,0 +1,112 @@
+:root {
+    --bg-dark: #0a0f0f;
+    --text: #e8f1f1;
+    --muted: #b6c7c7;
+    --teal-700: #0f3c3a;
+    --teal-600: #114846;
+    --line: #123a39;
+    --hover: #132020;
+    --color3: #0f3c3a;
+    --color1: #e8f1f1;
+    --color2: #114846;
+    --color4: rgba(0, 0, 0, .4);
+  }
+  
+  /* ===== Container central ===== */
+  .form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 80px);
+    padding-top: 80px;
+    background: transparent;
+    color: var(--text);
+  }
+  
+  /* ===== Card ===== */
+  .form-card {
+    background: rgba(15, 60, 58, 0.25);
+    border: 1px solid var(--teal-600);
+    border-radius: 20px;
+    padding: 40px 60px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(8px);
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  /* ===== Título ===== */
+  .form-title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #00c4a7;
+    margin-bottom: 24px;
+  }
+  
+  /* ===== Corpo do formulário ===== */
+  .form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* ===== Cada campo ===== */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text);
+  }
+  
+  .form-group input {
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--teal-600);
+    background-color: #0f3c3a;
+    color: var(--text);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #00c4a7;
+    background-color: #114846;
+  }
+  
+  /* ===== Botão salvar ===== */
+  .btn-salvar {
+    margin-top: 16px;
+    background-color: var(--color3);
+    color: var(--color1);
+    border: 1px solid var(--color2);
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+  }
+  
+  .btn-salvar:hover {
+    background-color: #0a3638;
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px var(--color4);
+  }
+  
+  /* ===== Responsivo ===== */
+  @media (max-width: 768px) {
+    .form-card {
+      padding: 32px 24px;
+    }
+    .form-title {
+      font-size: 1.5rem;
+    }
+  }
+  

@@ -7,11 +7,11 @@ const Login = () => {
   const handleLogin = (e: { preventDefault: () => void }) => {
     e.preventDefault() // evita o recarregamento da página
 
-    // futuramente aqui você vai validar o login com o backend
+    
     console.log('Login realizado!')
 
     // redireciona para a página inicial
-    navigate('/')
+    navigate('/home')
   }
 
   return (

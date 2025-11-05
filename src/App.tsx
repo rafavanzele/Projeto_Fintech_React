@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import Header from './components/Header/Header'
 
 // páginas
@@ -7,6 +7,8 @@ import Login from './pages/Login/Login'
 import Despesas from './pages/Despesas/Despesas'
 import Investimento from './pages/Investimento/Investimento'
 import Error from './pages/Error/Error'
+import CadastrarDespesas from './pages/CadastrarDespesas/CadastrarDespesas'
+import CadastrarInvestimento from './pages/CadastrarInvestimento/CadastrarInvestimento'
 
 // estilos globais
 import './index.css'
@@ -20,12 +22,19 @@ function AppContent() {
     <>
       {!hideHeader && <Header />}
       <Routes>
-        <Route path="/" element={<Home />} />
+
+        <Route path="/" element={<Navigate to="/login" />} />
+
+        {/* páginas principais */}
         <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/despesa" element={<Despesas />} />
         <Route path="/investimento" element={<Investimento />} />
-        <Route path="*" element={<Error />} />
+        <Route path="/despesa/novo" element={<CadastrarDespesas />} />
+        <Route path="/investimento/novo" element={<CadastrarInvestimento />} />
 
+        {/* rota de erro */}
+        <Route path="*" element={<Error />} />
       </Routes>
     </>
   )
