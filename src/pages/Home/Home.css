@@ -1,0 +1,100 @@
+:root {
+    --bg-dark: #0a0f0f;
+    --text: #e8f1f1;
+    --muted: #b6c7c7;
+    --teal-700: #0f3c3a;
+    --teal-600: #114846;
+    --line: #123a39;
+    --hover: #132020;
+  }
+  
+  /* ===== Container geral ===== */
+  .home-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 80px);
+    background: transparent;
+  }
+  
+  .home-content {
+    text-align: center;
+    color: var(--text);
+    width: 100%;
+    max-width: 1100px;
+    padding: 40px 24px;
+  }
+  
+  /* ===== Título e subtítulo ===== */
+  .home-title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .home-subtitle {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-bottom: 50px;
+  }
+  
+  /* ===== Cards ===== */
+  .cards-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    flex: 1;
+    min-width: 260px;
+    background: rgba(15, 60, 58, 0.2);
+    border: 1px solid var(--teal-600);
+    border-radius: 20px;
+    padding: 28px 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card h3 {
+    color: var(--muted);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  
+  .card p {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--text);
+  }
+  
+  /* ===== Efeitos individuais ===== */
+  .card-saldo:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(0, 255, 170, 0.15);
+  }
+  
+  .card-despesas:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(255, 100, 100, 0.15);
+  }
+  
+  .card-invest:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(100, 255, 255, 0.15);
+  }
+  
+  /* ===== Responsividade ===== */
+  @media (max-width: 768px) {
+    .cards-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 80%;
+    }
+  }
+  

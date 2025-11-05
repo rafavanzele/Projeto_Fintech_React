@@ -1,0 +1,77 @@
+:root {
+    --bg-dark:#0a0f0f;
+    --text:#e8f1f1;
+    --muted:#b6c7c7;
+    --teal-700:#0f3c3a;
+    --teal-600:#114846;
+    --line:#123a39;
+    --hover:#132020;
+    --color3:#0f3c3a;
+    --color1:#e8f1f1;
+    --color2:#114846;
+    --color4:rgba(0,0,0,.4);
+  }
+  
+  /* ===== Container geral ===== */
+  .despesas-container,
+  .invest-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: calc(100vh - 80px);
+    padding-top: 100px; /* afasta do header fixo */
+    background: transparent;
+    color: var(--text);
+  }
+  
+  /* ===== Container central da tabela ===== */
+  .table-wrap {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* ===== Título da seção ===== */
+  .table-title {
+    background-color: var(--teal-700);
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 16px 0;
+    width: 80%;
+    margin: 0 auto 16px auto; 
+    border-radius: 18px;
+    margin-bottom: 16px;
+    border-bottom: 3px solid var(--teal-600);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  
+  /* ===== Botão ===== */
+  .btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  /* ===== Segurança: remove pseudo-elementos invisíveis ===== */
+  .table-wrap::before,
+  .table-wrap::after,
+  .table-title::before,
+  .table-title::after {
+    content: none !important;
+  }
+  
+  /* ===== Responsividade ===== */
+  @media (max-width: 768px) {
+    .table-title {
+      font-size: 1.4rem;
+      padding: 12px 0;
+    }
+  }
+  

@@ -1,37 +1,30 @@
 import './Table.css'
 
 const Table = () => {
-    return (
-        <div className="table-wrap">
-
-            <div className="table-title">
-                💸 Despesas
-            </div>
-
-            <table className="fin-table">
-                <thead>
-                    <tr>
-                        <th>Receita</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Receita 1</td>
-                        <td>1000</td>
-                    </tr>
-                    <tr>
-                        <td>Receita 2</td>
-                        <td>2000</td>
-                    </tr>
-                    <tr>
-                        <td>Receita 3</td>
-                        <td>3000</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    )
+  return (
+    <table className="fin-table">
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Conta de Luz</td>
+          <td>R$ 250,00</td>
+        </tr>
+        <tr>
+          <td>Internet</td>
+          <td>R$ 120,00</td>
+        </tr>
+        <tr>
+          <td>Aluguel</td>
+          <td>R$ 1.500,00</td>
+        </tr>
+      </tbody>
+    </table>
+  )
 }
 
 export default Table

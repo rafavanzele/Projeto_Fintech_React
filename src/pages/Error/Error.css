@@ -1,0 +1,86 @@
+:root {
+    --bg-dark: #0a0f0f;
+    --text: #e8f1f1;
+    --muted: #b6c7c7;
+    --teal-700: #0f3c3a;
+    --teal-600: #114846;
+    --hover: #132020;
+    --color3: #0f3c3a;
+    --color1: #e8f1f1;
+    --color2: #114846;
+    --color4: rgba(0, 0, 0, 0.4);
+  }
+  
+  /* ===== Container central ===== */
+  .error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 80px);
+    background: transparent;
+    color: var(--text);
+  }
+  
+  /* ===== Cartão ===== */
+  .error-card {
+    text-align: center;
+    background: rgba(15, 60, 58, 0.25);
+    border: 1px solid var(--teal-600);
+    border-radius: 20px;
+    padding: 40px 60px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(8px);
+  }
+  
+  /* ===== Título principal ===== */
+  .error-title {
+    font-size: 6rem;
+    font-weight: 800;
+    color: #00c4a7;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+  
+  /* ===== Mensagem e subtítulo ===== */
+  .error-message {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  
+  .error-subtext {
+    color: var(--muted);
+    margin-bottom: 30px;
+  }
+  
+  /* ===== Botão voltar ===== */
+  .btn-voltar {
+    display: inline-block;
+    background-color: var(--color3);
+    color: var(--color1);
+    border: 1px solid var(--color2);
+    border-radius: 20px;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-voltar:hover {
+    background-color: #0a3638;
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px var(--color4);
+  }
+  
+  /* ===== Responsivo ===== */
+  @media (max-width: 768px) {
+    .error-card {
+      padding: 30px 20px;
+    }
+    .error-title {
+      font-size: 4.5rem;
+    }
+  }
+  
