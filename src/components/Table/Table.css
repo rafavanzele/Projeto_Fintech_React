@@ -1,0 +1,128 @@
+/* ===== Paleta ===== */
+:root {
+    --bg-dark: #0a0f0f;
+    --text: #e8f1f1;
+    --muted: #b6c7c7;
+    --teal-700: #0f3c3a;
+    --teal-600: #114846;
+    --line: #123a39;
+    --hover: #132020;
+}
+
+/* ===== Container ===== */
+.table-wrap {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* topo da área visível */
+    flex-direction: column;
+    max-width: 900px;
+    /* antes 1100px */
+    margin: 100px auto 40px;
+    /* espaço abaixo do header */
+    padding: 0 40px;
+    /* respiro lateral maior */
+}
+
+/* ===== Tabela base ===== */
+.fin-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: var(--text);
+    background: transparent;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    /* centraliza a tabela dentro do container */
+    text-align: center;
+}
+
+/* ===== Cabeçalho ===== */
+.table-title {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 18px 24px;
+    
+    width: 95%;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #fff;
+    letter-spacing: 0.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.fin-table thead th {
+    background: var(--teal-700);
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    padding: 18px 22px;
+    border-bottom: 2px solid var(--teal-600);
+    letter-spacing: .3px;
+    font-size: 1.3rem;
+}
+
+.fin-table thead th:first-child {
+    border-top-left-radius: 20px;
+}
+
+.fin-table thead th:last-child {
+    border-top-right-radius: 20px;
+}
+
+
+
+/* ===== Corpo ===== */
+.fin-table tbody td {
+    padding: 16px 22px;
+    /* antes 14x16 */
+    border-bottom: 1px solid var(--line);
+    color: var(--text);
+    font-size: 1.05rem;
+}
+
+.fin-table tbody tr {
+    transition: background .18s ease;
+}
+
+.fin-table tbody tr:hover {
+    background: var(--hover);
+}
+
+/* ===== Coluna de ações ===== */
+.fin-table td.actions,
+.fin-table th.actions {
+    width: 160px;
+    /* antes 120px */
+    text-align: center;
+}
+
+/* ===== Estado vazio e carregando ===== */
+.fin-table .row-empty td,
+.fin-table .row-loading td {
+    text-align: center;
+    color: var(--muted);
+    padding: 26px 16px;
+    font-size: 1rem;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 900px) {
+    .table-wrap {
+        padding: 0 16px;
+    }
+
+    .fin-table thead th,
+    .fin-table tbody td {
+        padding: 22px 28px;
+        font-size: 1rem;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
