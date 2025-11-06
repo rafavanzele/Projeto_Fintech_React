@@ -1,19 +1,27 @@
-import "./Investimento.css";
+import "./Receitas.css";
 import Table from "../../components/Table/Table";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import type { MovimentacaoProp } from "../Despesas/Despesas";
 
-const Investimento = () => {
+export interface MovimentacaoProp {
+  id: number;
+  dataDespesa?: string;
+  valor: number;
+  descricao: string;
+  tipoInvestimento?: string;
+  dataInvestimento?: string;
+}
+
+const Receitas = () => {
   const navigate = useNavigate();
-  const [investimento, setInvestimento] = useState<MovimentacaoProp[]>([]);
+  const [receitas, setReceitas] = useState<MovimentacaoProp[]>([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/investimento")
+      .get("http://localhost:8080/api/receita")
       .then((response) => {
-        setInvestimento(response.data);
+        setReceitas(response.data);
       })
       .catch((error) => {
         console.error(error);
@@ -21,15 +29,15 @@ const Investimento = () => {
   }, []);
 
   return (
-    <div className="invest-container">
+    <div className="receitas-container">
       <div className="table-wrap">
-        <div className="table-title">📈 Investimentos</div>
-        <Table movimentacoes={investimento} />
+        <div className="table-title">💸 Receitas</div>
+        <Table movimentacoes={receitas} />
 
         <div className="btn-container">
           <button
             className="btn-cadastrar"
-            onClick={() => navigate("/investimento/novo")}
+            onClick={() => navigate("/receita/novo")}
           >
             Cadastrar
           </button>
@@ -39,4 +47,4 @@ const Investimento = () => {
   );
 };
 
-export default Investimento;
+export default Receitas;

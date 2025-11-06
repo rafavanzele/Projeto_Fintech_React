@@ -1,102 +1,95 @@
 :root {
-    --bg-dark: #0a0f0f;
-    --text: #e8f1f1;
-    --muted: #b6c7c7;
-    --teal-700: #0f3c3a;
-    --teal-600: #114846;
-    --line: #123a39;
-    --hover: #132020;
-    --color3: #0f3c3a;
-    --color1: #e8f1f1;
-    --color2: #114846;
-    --color4: rgba(0, 0, 0, 0.4);
-  }
-  
-  /* ===== Container centralizado ===== */
-  .login-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100vh - 80px); /* respeita o header fixo */
-    background: transparent;
-  }
-  
-  /* ===== Card de login ===== */
-  .login-card {
-    background: rgba(15, 60, 58, 0.2);
-    border: 1px solid var(--teal-600);
-    border-radius: 20px;
-    padding: 40px 60px;
-    width: 100%;
-    max-width: 480px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(8px);
-  }
-  
-  /* ===== Título ===== */
-  .login-title {
-    text-align: center;
-    color: var(--text);
-    font-size: 1.8rem;
-    margin-bottom: 32px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-  }
-  
-  /* ===== Form ===== */
-  .login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-  
-  /* ===== Campos ===== */
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    color: var(--text);
-  }
-  
-  .form-group label {
-    margin-bottom: 6px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--muted);
-  }
-  
-  .form-group input {
-    background: #fff;
-    color: var(--bg-dark);
-    border: 1px solid var(--teal-600);
-    border-radius: 10px;
-    padding: 12px;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.2s ease, background-color 0.2s ease;
-  }
-  
-  .form-group input:focus {
-    border-color: #13a89e;
-    background-color: #fff;
-  }
-  
-  /* ===== Botão ===== */
-  .btn-login {
-    margin-top: 10px;
-    background-color: var(--color3);
-    color: var(--color1);
-    border: 1px solid var(--color2);
-    border-radius: 20px;
-    height: 44px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  
-  .btn-login:hover {
-    background-color: #0a3638;
-    transform: scale(1.03);
-    box-shadow: 0 4px 10px var(--color4);
-  }
-  
+  --bg-dark: #0a0f0f;
+  --text: #e8f1f1;
+  --muted: #b6c7c7;
+  --teal-700: #0f3c3a;
+  --teal-600: #114846;
+  --line: #123a39;
+  --hover: #132020;
+  --color3: #0f3c3a;
+  --color1: #e8f1f1;
+  --color2: #114846;
+  --color4: rgba(0, 0, 0, 0.4);
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+  background: transparent;
+}
+
+.login-card {
+  background: rgba(15, 60, 58, 0.2);
+  border: 1px solid var(--teal-600);
+  border-radius: 20px;
+  padding: 40px 60px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+.login-title {
+  text-align: center;
+  color: var(--text);
+  font-size: 1.8rem;
+  margin-bottom: 32px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  color: var(--text);
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.form-group input {
+  background: #fff;
+  color: var(--bg-dark);
+  border: 1px solid var(--teal-600);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #13a89e;
+  background-color: #fff;
+}
+
+.btn-login {
+  margin-top: 10px;
+  background-color: var(--color3);
+  color: var(--color1);
+  border: 1px solid var(--color2);
+  border-radius: 20px;
+  height: 44px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-login:hover {
+  background-color: #0a3638;
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px var(--color4);
+}

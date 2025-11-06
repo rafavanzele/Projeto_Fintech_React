@@ -1,18 +1,16 @@
-import './Login.css'
-import { useNavigate } from 'react-router-dom'
+import "./Login.css";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleLogin = (e: { preventDefault: () => void }) => {
-    e.preventDefault() // evita o recarregamento da página
+    e.preventDefault();
 
-    
-    console.log('Login realizado!')
+    console.log("Login realizado!");
 
-    // redireciona para a página inicial
-    navigate('/home')
-  }
+    navigate("/home");
+  };
 
   return (
     <div className="login-container">
@@ -48,7 +46,7 @@ const Login = () => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

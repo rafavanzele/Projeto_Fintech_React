@@ -1,33 +1,73 @@
-import './Home.css'
+import { useEffect, useState } from "react";
+import "./Home.css";
+import axios from "axios";
 
 const Home = () => {
-    return (
-        <div className="home-container">
-            <div className="home-content">
-                <h1 className="home-title">Bem-vindo(a) ao Fintech</h1>
-                <p className="home-subtitle">
-                    Aqui está um breve resumo de suas ultimas movimentações financeiras:
-                </p>
+  const [despesa, setDespesa] = useState<number>(0);
+  const [receita, setReceita] = useState<number>(0);
+  const [investimento, setInvestimento] = useState<number>(0);
 
-                <div className="cards-container">
-                    <div className="card card-saldo">
-                        <h3>💰 Saldo Total</h3>
-                        <p>R$ 12.750,00</p>
-                    </div>
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/api/despesa/total")
+      .then((response) => {
+        setDespesa(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
 
-                    <div className="card card-despesas">
-                        <h3>📉 Despesas</h3>
-                        <p>R$ 4.320,00</p>
-                    </div>
+    axios
+      .get("http://localhost:8080/api/investimento/total")
+      .then((response) => {
+        setInvestimento(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
 
-                    <div className="card card-invest">
-                        <h3>📈 Investimentos</h3>
-                        <p>R$ 8.430,00</p>
-                    </div>
-                </div>
-            </div>
+    axios
+      .get("http://localhost:8080/api/receita/total")
+      .then((response) => {
+        setReceita(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  return (
+    <div className="home-container">
+      <div className="home-content">
+        <h1 className="home-title">Bem-vindo(a) ao Fintech</h1>
+        <p className="home-subtitle">
+          Aqui está um breve resumo de suas ultimas movimentações financeiras:
+        </p>
+
+        <div className="cards-container">
+          <div className="card card-receitas">
+            <h3>📈 Receitas</h3>
+            <p>R$ {receita.toFixed(2)}</p>
+          </div>
+
+          <div className="card card-despesas">
+            <h3>📉 Despesas</h3>
+            <p>R$ {despesa.toFixed(2)}</p>
+          </div>
+
+          <div className="card card-invest">
+            <h3>📈 Investimentos</h3>
+            <p>R$ {investimento.toFixed(2)}</p>
+          </div>
+
+          <div className="card card-saldo">
+            <h3>💰 Saldo Total</h3>
+            <p>R$ {(receita - despesa).toFixed(2)}</p>
+          </div>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Home
+export default Home;

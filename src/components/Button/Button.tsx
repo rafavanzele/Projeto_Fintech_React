@@ -1,14 +1,11 @@
-import './Button.css'
+import "./Button.css";
 
 const Button = () => {
-    return (
-        <div className="btn-container">
-            <button className="btn-editar">
-                Editar
-            </button>
+  return (
+    <div className="btn-container">
+      <button className="btn-editar">Editar</button>
+    </div>
+  );
+};
 
-        </div>
-    )
-}
-
-export default Button
+export default Button;

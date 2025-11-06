@@ -1,9 +1,9 @@
 import axios from "axios";
-import "./CadastrarDespesas.css";
+import "./CadastrarReceitas.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const CadastrarDespesas = () => {
+const CadastrarReceitas = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
 
@@ -16,36 +16,33 @@ const CadastrarDespesas = () => {
       const desp = state.movimentacao;
       setDescricao(desp.descricao || "");
       setValor(desp.valor?.toString() || "");
-      setData(desp.dataDespesa || "");
+      setData(desp.dataReceita || "");
     }
   }, [state]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const novaDespesa = {
+    const novaReceita = {
       descricao,
       valor: parseFloat(valor),
-      dataDespesa: data,
+      dataReceita: data,
       idUsuario: 2,
     };
 
     try {
       if (state && state.movimentacao && state.movimentacao.id) {
         await axios.put(
-          `http://localhost:8080/api/despesa/${state.movimentacao.id}`,
-          novaDespesa
+          `http://localhost:8080/api/receita/${state.movimentacao.id}`,
+          novaReceita
         );
-        console.log("✅ Despesa atualizada com sucesso!");
       } else {
-        // Se for novo cadastro, envia POST
-        await axios.post("http://localhost:8080/api/despesa", novaDespesa);
-        console.log("✅ Despesa cadastrada com sucesso!");
+        await axios.post("http://localhost:8080/api/receita", novaReceita);
       }
 
-      navigate("/despesa");
+      navigate("/receita");
     } catch (error) {
-      console.error("❌ Erro ao salvar despesa:", error);
+      console.error("Erro ao salvar receita:", error);
     }
   };
 
@@ -54,8 +51,8 @@ const CadastrarDespesas = () => {
       <div className="form-card">
         <h2 className="form-title">
           {state && state.movimentacao
-            ? "Editar Despesa"
-            : "Cadastrar Nova Despesa"}
+            ? "Editar Receita"
+            : "Cadastrar Nova Receita"}
         </h2>
 
         <form className="form-body" onSubmit={handleSubmit}>
@@ -65,7 +62,7 @@ const CadastrarDespesas = () => {
               type="text"
               id="descricao"
               name="descricao"
-              placeholder="Ex: Conta de Luz"
+              placeholder="Ex: CDB"
               required
               value={descricao}
               onChange={(e) => setDescricao(e.target.value)}
@@ -87,7 +84,7 @@ const CadastrarDespesas = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="data">Data da Despesa</label>
+            <label htmlFor="data">Data da Receita</label>
             <input
               type="date"
               id="data"
@@ -100,8 +97,8 @@ const CadastrarDespesas = () => {
 
           <button type="submit" className="btn-salvar">
             {state && state.movimentacao
-              ? "Atualizar Despesa"
-              : "Salvar Despesa"}
+              ? "Atualizar Receita"
+              : "Salvar Receita"}
           </button>
         </form>
       </div>
@@ -109,4 +106,4 @@ const CadastrarDespesas = () => {
   );
 };
 
-export default CadastrarDespesas;
+export default CadastrarReceitas;

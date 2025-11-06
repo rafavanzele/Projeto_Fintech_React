@@ -1,63 +1,73 @@
 /* ======= Base ======= */
 .fin-table {
-    width: 80%;                 /* largura controlada */
-    margin: 0 auto;             /* centraliza horizontalmente */
-    border-collapse: separate;
-    border-spacing: 0;
-    color: var(--text);
-    background: transparent;
-    font-size: 1.05rem;
-    line-height: 1.55;
-  }
-  
-  /* ======= Cabeçalho ======= */
-  .fin-table thead th {
-    background: var(--teal-700);
-    color: #fff;
-    font-weight: 600;
-    padding: 12px 20px;
-    border-bottom: 2px solid var(--teal-600);
-    letter-spacing: 0.3px;
-    text-align: left;
-  }
-  
-  .fin-table thead th:first-child {
-    border-top-left-radius: 12px;
-  }
-  
-  .fin-table thead th:last-child {
-    border-top-right-radius: 12px;
-  }
-  
-  /* ======= Corpo ======= */
-  .fin-table tbody td {
-    padding: 14px 20px;
-    border-bottom: 1px solid var(--line);
-    color: var(--text);
-  }
-  
-  /* ======= Alinhamento das colunas ======= */
-  .fin-table th:nth-child(1),
-  .fin-table td:nth-child(1) {
-    width: 55%;
-    text-align: left;
-    padding-left: 32px;
-  }
-  
-  .fin-table th:nth-child(2),
-  .fin-table td:nth-child(2) {
-    width: 45%;
-    text-align: right;
-    padding-right: 32px;
-    font-variant-numeric: tabular-nums;
-  }
-  
-  /* ======= Hover ======= */
-  .fin-table tbody tr {
-    transition: background 0.18s ease;
-  }
-  
-  .fin-table tbody tr:hover {
-    background: var(--hover);
-  }
-  
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--text);
+  background: transparent;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+/* ======= Cabeçalho ======= */
+.fin-table thead th {
+  background: var(--teal-700);
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-bottom: 2px solid var(--teal-600);
+  letter-spacing: 0.3px;
+  text-align: left;
+}
+
+.fin-table thead th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.fin-table thead th:last-child {
+  border-top-right-radius: 12px;
+}
+
+/* ======= Corpo ======= */
+.fin-table tbody td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--line);
+  color: var(--text);
+}
+
+/* ======= Alinhamento das colunas ======= */
+.fin-table th:nth-child(1),
+.fin-table td:nth-child(1) {
+  width: 55%;
+  text-align: left;
+  padding-left: 32px;
+}
+
+.fin-table th:nth-child(2),
+.fin-table td:nth-child(2) {
+  width: 45%;
+  text-align: right;
+  padding-right: 32px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ======= Hover ======= */
+.fin-table tbody tr {
+  transition: background 0.18s ease;
+}
+
+.fin-table tbody tr:hover {
+  background: var(--hover);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-excluir,
+.btn-editar {
+  cursor: pointer;
+}

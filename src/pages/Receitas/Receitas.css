@@ -13,13 +13,14 @@
 }
 
 .despesas-container,
-.invest-container {
+.invest-container,
+.receitas-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-height: calc(100vh - 80px);
   padding-top: 100px;
-
+  /* afasta do header fixo */
   background: transparent;
   color: var(--text);
 }
@@ -69,7 +70,8 @@
 .btn-editar,
 .btn-cadastrar {
   flex: 1;
-  max-width: 100%;
+
+  max-width: 500px;
   height: 44px;
   background-color: var(--color3);
   color: var(--color1);
